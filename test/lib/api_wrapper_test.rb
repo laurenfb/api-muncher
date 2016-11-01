@@ -1,2 +1,10 @@
 require 'test_helper'
-require 'slack_api_wrapper'
+require 'api_wrapper'
+
+class ApiWrapperTest < ActionController::TestCase
+
+  test 'the truth' do
+    assert true
+  end
+
+end
