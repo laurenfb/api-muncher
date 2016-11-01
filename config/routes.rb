@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'homepages#index'
+  root to: 'homepages#search'
 
-  get 'homepages/search'
+  get 'homepages/index'
 
   get 'homepages/show'
 
