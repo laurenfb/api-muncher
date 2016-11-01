@@ -7,4 +7,8 @@ class RecipeTest < ActionController::TestCase
     assert true
   end
 
+  test 'new method creates a new Recipe object' do
+    hash = {}
+  end
+
 end

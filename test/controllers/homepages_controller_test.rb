@@ -12,7 +12,7 @@ class HomepagesControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show
+    get :show, {name: 'recipe_name'}
     assert_response :success
   end
 
