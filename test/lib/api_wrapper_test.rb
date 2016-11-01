@@ -8,11 +8,43 @@ class APIWrapperTest < ActionController::TestCase
   end
 
 ############# token & permissions stuff #############
-  test 'retrieves nil when app id is wrong' do
+  test 'returns an html page when app id is wrong' do
     VCR.use_cassette("bad-app-id") do
       recipe_list = APIWrapper.search('cat', 'bad-app-id', ENV["APP_KEY"])
 
-      assert_redirect
+      assert_equal(recipe_list['headers']['Content-Type'], "text/html")
+    end
+  end
+
+  test 'returns an html page when app key is wrong' do
+    VCR.use_cassette("bad-app-key") do
+      recipe_list = APIWrapper.search('cat', ENV["APP_ID"], 'bad-app-key')
+
+      assert_equal(recipe_list['headers']['Content-Type'], "text/html")
+    end
+  end
+
+  test 'works fine when app key is missing' do
+    VCR.use_cassette("missing-app-key") do
+      recipe_list = APIWrapper.search('cat', ENV["APP_ID"], nil)
+
+      assert_not_empty(recipe_list)
+    end
+  end
+
+  test 'works fine when app id is missing' do
+    VCR.use_cassette("missing-app-id") do
+      recipe_list = APIWrapper.search('cat', nil, ENV["APP_KEY"])
+
+      assert_not_empty(recipe_list)
+    end
+  end
+
+  test 'works fine when app id & app key are missing' do
+    VCR.use_cassette("missing-app-stuff") do
+      recipe_list = APIWrapper.search('cat', nil, nil)
+
+      assert_not_empty(recipe_list)
     end
   end
 
