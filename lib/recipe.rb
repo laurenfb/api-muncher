@@ -1,2 +1,2 @@
-class ApiWrapper
+class Recipe
 end
