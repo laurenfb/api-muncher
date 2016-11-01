@@ -1,4 +1,4 @@
 require 'httparty'
 
-class ApiWrapper
+class APIWrapper
 end
