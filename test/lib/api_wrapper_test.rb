@@ -7,56 +7,17 @@ class APIWrapperTest < ActionController::TestCase
     assert true
   end
 
-############# token & permissions stuff #############
-  # test 'returns an html page when app id is wrong' do
-  #   # skip
-  #   VCR.use_cassette("bad-app-id") do
-  #     response = APIWrapper.search('cat', '232354353', ENV["APP_KEY"])
-  #
-  #     first_14_char = response[0..14]
-  #
-  #     assert_equal(first_14_char, "<!DOCTYPE html>")
-  #   end
-  # end
-  #
-  # test 'returns an html page when app key is wrong' do
-  #   skip
-  #   VCR.use_cassette("bad-app-key") do
-  #     response = APIWrapper.search('cat', ENV["APP_ID"], 'bad-app-key')
-  #
-  #     assert_equal(response['headers']['Content-Type'], "text/html")
-  #   end
-  # end
-  #
-  # test 'works fine when app key is missing' do
-  #   skip
-  #   VCR.use_cassette("missing-app-key") do
-  #     response = APIWrapper.search('cat', ENV["APP_ID"], nil)
-  #     # puts response
-  #     # assert_not_nil(response)
-  #   end
-  # end
-  #
-  # test 'works fine when app id is missing' do
-  #   skip
-  #   VCR.use_cassette("missing-app-id") do
-  #     response = APIWrapper.search('cat', nil, ENV["APP_KEY"])
-  #
-  #     assert_not_empty(response)
-  #   end
-  # end
-  #
-  # test 'works fine when app id & app key are missing' do
-  #   skip
-  #   VCR.use_cassette("missing-app-stuff") do
-  #     response = APIWrapper.search('cat', nil, nil)
-  #
-  #     assert_not_empty(response)
+# can't test this since the method can't change constants?? 
+  # test 'search raises argument error if the incorrect key or ID is passed' do
+  #   VCR.use_cassette('messed-up-url') do
+  #     assert_raises(ArgumentError) do
+  #       APP_ID = "ksresdfjsdfk"
+  #       APIWrapper.search("cat")
+  #     end
   #   end
   # end
 
-######## make_recipe_list  method #############
-  test 'search returns a non-empty array if a reasonable term is searched' do
+  test 'make_recipe_list returns a non-empty array if a reasonable term is searched' do
     # skip
     VCR.use_cassette('chicken') do
       recipe_list = APIWrapper.make_recipe_list(APIWrapper.search('chicken'))
@@ -65,7 +26,7 @@ class APIWrapperTest < ActionController::TestCase
     end
   end
 
-  test 'search returns an array of Recipe objects' do
+  test 'make_recipe_list returns an array of Recipe objects' do
     # skip
     VCR.use_cassette('chicken') do
       recipe_list = APIWrapper.make_recipe_list(APIWrapper.search('chicken'))
@@ -113,5 +74,53 @@ class APIWrapperTest < ActionController::TestCase
       end
     end
   end
+
+
+# per Jamie's advice, it is not currently necessary to test this stuff. and so it is getting commented out.
+  # test 'returns false when app id is wrong' do
+  #   # skip
+  #   VCR.use_cassette("bad-app-id") do
+  #     response = APIWrapper.search('cat', '232354353', ENV["APP_KEY"])
+  #     assert_not(response)
+  #     assert_equal(response, false)
+  #   end
+  # end
+  #
+  # test 'returns false app key is wrong' do
+  #   # skip
+  #   VCR.use_cassette("bad-app-key") do
+  #     response = APIWrapper.search('cat', ENV["APP_ID"], 'bad-app-key')
+  #     assert_not(response)
+  #     assert_equal(response, false)
+  #   end
+  # end
+  #
+  # test 'works fine when app key is missing' do
+  #   # skip
+  #   VCR.use_cassette("missing-app-key") do
+  #     response = APIWrapper.search('cat', 0, 10, ENV["APP_ID"], nil)
+  #     assert(response) # checking it didn't return false
+  #     assert_instance_of(HTTParty::Response)
+  #   end
+  # end
+  #
+  # test 'works fine when app id is missing' do
+  #   # skip
+  #   VCR.use_cassette("missing-app-id") do
+  #     response = APIWrapper.search('cat', 0, 10, nil, ENV["APP_KEY"])
+  #     assert(response) # checking it didn't return false
+  #     assert_instance_of(HTTParty::Response)
+  #   end
+  # end
+  #
+  # test 'works fine when app id & app key are missing' do
+  #   # skip
+  #   VCR.use_cassette("missing-app-stuff") do
+  #     response = APIWrapper.search('cat', 0, 10, nil, nil)
+  #     assert(response) # checking it didn't return false
+  #     assert_instance_of(HTTParty::Response)
+  #   end
+  # end
+
 
 end
