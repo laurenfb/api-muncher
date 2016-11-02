@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.edamam.com/search?app_id=e9c170c7&app_key=edb9cb9c3fe8400bbaa929c0a81446ce&from=232354353&q=cat&to=edb9cb9c3fe8400bbaa929c0a81446ce
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Server:
+      - ngx_openresty
+      Date:
+      - Wed, 02 Nov 2016 18:11:39 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '1194'
+      Connection:
+      - close
+      Vary:
+      - Accept-Encoding
+      Etag:
+      - '"511d9665-4aa"'
+    body:
+      encoding: ASCII-8BIT
+      string: "<!--[if IE 9]>\n<!DOCTYPE html>\n<html class=\"ie ie9 lte9\" xmlns=\"http://www.w3.org/1999/xhtml\"
+        xml:lang=\"bg\" lang=\"bg\">\n<![endif]-->\n\n<!--[if gt IE 9]>\n<!DOCTYPE
+        html>\n<html class=\"ie gt9\" xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"bg\"
+        lang=\"bg\">\n<![endif]-->\n\n<!--[if !IE]><!-->\n<!DOCTYPE html>\n<html xmlns=\"http://www.w3.org/1999/xhtml\"
+        xml:lang=\"bg\" lang=\"bg\">\n<!--<![endif]-->\n\n<head>\n    <title>Error
+        500 | Edamam</title>\n\n\t<meta http-equiv=\"Content-Type\" content=\"text/html;
+        charset=UTF-8\" />\n\t<meta http-equiv=\"Content-Language\" content=\"en\"
+        />\n\t<meta http-equiv=\"Content-Style-Type\" content=\"text/css\" />\n\t\n\t<meta
+        http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\" />\n\n\t<meta
+        name=\"viewport\" content=\"user-scalable=no, initial-scale=1.0, maximum-scale=1.0,
+        width=device-width\">\n\n\t<meta name=\"description\" content=\"Finding recipes
+        just got easier. Edamam has over 1 million recipes from more than 500 sites\"/>\n\t<meta
+        name=\"keywords\" content=\"edamam, recipes, food, nutritions, ingredients,
+        calories, servings\"/>\n\n\t<meta name=\"robots\" content=\"all,index,follow\"
+        />\n\t<meta name=\"googlebot\" content=\"index,follow,noodp\" />\n\t<meta
+        name=\"msnbot\" content=\"all,index,follow\" />\n\t\n\t<meta name=\"verify-v1\"
+        content=\"Google Webmaster tools\" />\n\t<meta name=\"verify-v1\" content=\"Yahoo
+        Site Explorer\" />\n\t<meta name=\"verify-v1\" content=\"MSN Webmaster Center\"
+        />\n\t\n\t<meta name=\"SKYPE_TOOLBAR\" content=\"SKYPE_TOOLBAR_PARSER_COMPATIBLE\"
+        />\n\n\t<link type=\"image/x-icon\" rel=\"icon\" href=\"/favicon.ico\" />\n\t<link
+        type=\"image/x-icon\" rel=\"shortcut icon\" href=\"/favicon.ico\" />\n\t\n\t<link
+        rel=\"stylesheet\" type=\"text/css\" href=\"/css/general.css\" />\n\t<style
+        type=\"text/css\">\n\t\t/* ........................... */\n\t\t#head, #error-txt
+        {margin-top: 100px !important}\n\t\t\n\t\t@media only screen and (max-width:
+        599px), only screen and (max-height: 480px) and (max-width: 800px) {\n\t\t\t#head,
+        #error-txt {margin-top: 20px !important}\n\t\t}\n\t</style>\n\t\n\t<!--[if
+        lt IE 9]><script type=\"text/javascript\" src=\"/js/html5shiv.js\"></script><![endif]-->\n</head>\n\n<body
+        id=\"page-501\" class=\"tmpl-main sub-error\">\n\t<div id=\"general\">\n\t\t<header
+        class=\"gradient grd-header cf\">\n\t\t\t<div class=\"header-inner\">\n\t\t\t\t&nbsp;\n\t\t\t</div><!--
+        /header-inner -->\n\t\t</header>\n\t\t\n\t\t<section>\n\t\t\t<div id=\"main\">\n\t\t\t\t<div
+        id=\"head\">\n\t\t\t\t\t<a id=\"site-logo\" href=\"/\">Edamam</a>\n\t\t\t\t\t<span
+        id=\"site-slogan\" class=\"txt-n12a col-666 shd-1-1-0-FFF\">Eat better!</span>\n\t\t\t\t</div><!--
+        /head -->\n\n\t\t\t\t<div id=\"error-txt\">\n\t\t\t\t\t<p class=\"txt-n20g
+        col-FF8400 align-c pl10 pr10 pb10\">You can't make an omelette without breaking
+        some eggs. <br>We are in the kitchen - will be serving soon...</p>\n\t\t\t\t</div><!--
+        /error-txt -->\n\t\t\t</div><!-- /main -->\n\t\t</section>\n\t\t\n\t\t<footer
+        class=\"cf bgc-F2F2F2\">\n\t\t\t&nbsp;\n\t\t</footer>\n\t</div><!-- /general
+        -->\n</body>\n\n</html>"
+    http_version: 
+  recorded_at: Wed, 02 Nov 2016 18:11:39 GMT
+recorded_with: VCR 3.0.3
