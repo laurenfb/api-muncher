@@ -1,0 +1,123 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.edamam.com/search?app_id=e9c170c7&app_key=edb9cb9c3fe8400bbaa929c0a81446ce&from=0&q=&to=10
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ngx_openresty
+      Date:
+      - Wed, 02 Nov 2016 18:06:49 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 UTC
+      X-Served-By:
+      - ip-10-150-1-224/10.150.1.224
+      Set-Cookie:
+      - JSESSIONID=CE41C6BE934C0724A518ABC3891BDC41; Path=/
+      - JSESSIONID=CE41C6BE934C0724A518ABC3891BDC41; Path=/; Secure; HttpOnly
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "q" : "",
+          "from" : 0,
+          "to" : 10,
+          "params" : {
+            "sane" : [ ],
+            "to" : [ "10" ],
+            "q" : [ "" ],
+            "app_id" : [ "e9c170c7" ],
+            "app_key" : [ "edb9cb9c3fe8400bbaa929c0a81446ce" ],
+            "from" : [ "0" ]
+          },
+          "more" : false,
+          "count" : 0,
+          "hits" : [ ]
+        }
+    http_version: 
+  recorded_at: Wed, 02 Nov 2016 18:06:49 GMT
+- request:
+    method: get
+    uri: https://api.edamam.com/search?app_id=e9c170c7&app_key=edb9cb9c3fe8400bbaa929c0a81446ce&from=0&q=&to=9
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ngx_openresty
+      Date:
+      - Wed, 02 Nov 2016 19:54:21 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 UTC
+      X-Served-By:
+      - ip-10-150-1-224/10.150.1.224
+      Set-Cookie:
+      - JSESSIONID=0432E0FD734FF92C8DCB5DDB8C19A5B6; Path=/
+      - JSESSIONID=0432E0FD734FF92C8DCB5DDB8C19A5B6; Path=/; Secure; HttpOnly
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "q" : "",
+          "from" : 0,
+          "to" : 9,
+          "params" : {
+            "sane" : [ ],
+            "to" : [ "9" ],
+            "q" : [ "" ],
+            "app_id" : [ "e9c170c7" ],
+            "app_key" : [ "edb9cb9c3fe8400bbaa929c0a81446ce" ],
+            "from" : [ "0" ]
+          },
+          "more" : false,
+          "count" : 0,
+          "hits" : [ ]
+        }
+    http_version: 
+  recorded_at: Wed, 02 Nov 2016 19:54:21 GMT
+recorded_with: VCR 3.0.3
