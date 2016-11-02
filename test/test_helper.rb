@@ -17,7 +17,7 @@ class ActiveSupport::TestCase
 
 
   VCR.configure do |config|
-    config.cassette_library_dir = 'test/cassettes' # folder where casettes will be located
+    config.cassette_library_dir = 'test/cassettes' # folder where cassettes will be located
     config.hook_into :webmock # tie into this other tool called webmock
     config.default_cassette_options = {
       :record => :new_episodes,    # record new data when we don't have it yet
