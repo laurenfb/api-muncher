@@ -6,16 +6,16 @@ class APIWrapper
   APP_ID = ENV["APP_ID"]
   APP_KEY = ENV["APP_KEY"]
 
-  def self.search(query, from = 0, to = 10, id = APP_ID, key = APP_KEY)
+  def self.search(query, from = 0, to = 10)
     # if there are spaces, pull them out. i know this looks kinda ugly but escape method is annoying for "" and nil.
     if !query.nil?
       query = URI.escape(query)
     end
 
-    url = BASE_URL + "&app_id=#{id}" + "&app_key=#{key}" + "&q=#{query}" + "&from=#{from}" + "&to=#{to}"
+    url = BASE_URL + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}" + "&q=#{query}" + "&from=#{from}" + "&to=#{to}"
 
-
-    return HTTParty.get(url)
+    response = HTTParty.get(url)
+    response.code == 200 ? response : ArgumentError.new("Please use the correct ID and Key. ")
   end
 
   def self.make_recipe_list(response)
