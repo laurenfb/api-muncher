@@ -2,8 +2,11 @@ require 'test_helper'
 
 class HomepagesControllerTest < ActionController::TestCase
   test "should get index" do
-    get :index
-    assert_response :success
+    VCR.use_cassette('get-index') do
+       get :index
+      assert_response :success
+    end
+
   end
 
   test "should get search" do
