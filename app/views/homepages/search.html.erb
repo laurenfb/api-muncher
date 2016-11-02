@@ -1,2 +1,12 @@
-<h1>Homepages#search</h1>
-<p>Find me in app/views/homepages/search.html.erb</p>
+
+
+<article class='logo small-6 medium-6 large-8 columns'>
+  <%= image_tag('what-the-heck-should-I-eat-logo.png', {alt: 'logo', title: 'logo'}) %>
+
+  <aside>
+    <%= form_tag('results', method: :get) do %>
+      <%= text_field_tag :query %>
+      <%= submit_tag "search", class: "Button" %>
+    <% end %>
+</aside>
+</article>
