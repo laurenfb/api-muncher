@@ -1,4 +1,3 @@
-
 class Recipe
   attr_reader :label, :image, :url, :yield, :diet_labels, :health_labels, :ingredient_list
 
