@@ -90,7 +90,7 @@ class APIWrapperTest < ActionController::TestCase
       assert_raises(JSON::ParserError) do
         id = 'cat'
         response = APIWrapper.find_single_recipe(id)
-        assert_nil(response)
+        assert_equal(response, :no_result)
       end
     end
   end

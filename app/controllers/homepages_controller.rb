@@ -16,6 +16,11 @@ class HomepagesController < ApplicationController
 
   def show
     response = APIWrapper.find_single_recipe(params[:id])
-    @recipe = Recipe.new(response[0])
+    if response == :no_result
+      flash[:notice] = ":("
+      redirect_to :search
+    else
+      @recipe = Recipe.new(response[0])
+    end
   end
 end

@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   get 'results' => 'homepages#index', as: 'results'
 
-  get '/show/*label' => 'homepages#show', as: 'show_recipe'
+  get '/show/:label' => 'homepages#show', as: 'show_recipe'
 end
