@@ -1,15 +1,15 @@
 
+<div class='row'>
+  <article class='logo small-6 medium-6 large-8 columns'>
+    <%= image_tag('what-the-heck-should-I-eat-logo.png', {alt: 'logo', title: 'logo'}) %>
+  </article>
+</div>
 
-<article class='logo small-6 medium-6 large-8 columns'>
-  <%= image_tag('what-the-heck-should-I-eat-logo.png', {alt: 'logo', title: 'logo'}) %>
-
+<div class='row'>
   <aside>
     <%= form_tag('results', method: :get) do %>
       <%= text_field_tag :query %>
       <%= submit_tag "search", class: "Button" %>
     <% end %>
   </aside>
-</article>
-
-
-<%= params %>
+</div>

@@ -16,19 +16,19 @@
 
  */
 
-
-// .logo {
-//   text-align: center;
-//   border-radius: 50%;
-//   background-color: rgb(105, 168, 75);
-//   color: white;
-//   font-weight: bold;
-// }
-
 .recipe-image{
   border-radius: 50%;
 }
 
 .single-image{
   float: left;
+}
+
+footer{
+  text-align: right;
+  padding-bottom: 1rem;
+}
+
+ul{
+  list-style-type: none;
 }
