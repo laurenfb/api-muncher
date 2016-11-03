@@ -31,6 +31,6 @@ class APIWrapper
 
   def self.find_single_recipe(id)
     url = BASE_URL + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}" + "&r=#{id}"
-    response = HTTParty.get(url)
+    response = HTTParty.get(url) rescue nil
   end
 end

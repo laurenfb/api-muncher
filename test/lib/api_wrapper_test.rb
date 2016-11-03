@@ -7,7 +7,7 @@ class APIWrapperTest < ActionController::TestCase
     assert true
   end
 
-# can't test this since the method can't change constants?? 
+# can't test this since the method can't change constants??
   # test 'search raises argument error if the incorrect key or ID is passed' do
   #   VCR.use_cassette('messed-up-url') do
   #     assert_raises(ArgumentError) do
@@ -75,6 +75,25 @@ class APIWrapperTest < ActionController::TestCase
     end
   end
 
+########## test find_single_recipe #######
+  test 'find_single_recipe finds only one recipe' do
+    VCR.use_cassette('single-recipe') do
+      id = 'http://www.edamam.com/ontologies/edamam.owl%23recipe_6ae9c0dbe45417f7983e2b93493f1172'
+      response = APIWrapper.find_single_recipe(id)
+      assert_not_empty(response)
+      assert_equal(response.length, 1)
+    end
+  end
+
+  test 'find_single recipe returns nil if recipe id is incorrect' do
+    VCR.use_cassette('weird-id-single-recipe') do
+      assert_raises(JSON::ParserError) do
+        id = 'cat'
+        response = APIWrapper.find_single_recipe(id)
+        assert_nil(response)
+      end
+    end
+  end
 
 # per Jamie's advice, it is not currently necessary to test this stuff. and so it is getting commented out.
   # test 'returns false when app id is wrong' do
