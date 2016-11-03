@@ -1,2 +1,15 @@
 <h1>Homepages#show</h1>
 <p>Find me in app/views/homepages/show.html.erb</p>
+
+<%= params %>
+<p>
+  <%= @recipe.id %>
+</p>
+<%= @recipe.label %>
+<p>
+  <%= image_tag(@recipe.image) %>
+</p>
+<%= @recipe.url %>
+<p>
+  <%= @recipe.yield %>
+</p>
