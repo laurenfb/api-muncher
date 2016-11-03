@@ -1,10 +1,20 @@
 class HomepagesController < ApplicationController
-  def index
-  end
 
   def search
   end
 
+  def index
+    response = APIWrapper.search(params[:query])
+    if response['count'] > 0
+      @recipes = APIWrapper.make_recipe_list(response)
+      @message = "Here's your results for #{params[:query]}:"
+    else
+      @recipes = []
+      @message = "We weren't able to find any recipes for #{params[:query]}. Care to try again?"
+    end
+  end
+
   def show
+    @recipe = Recipe.new(APIWrapper.find_single_recipe(params[:id]))
   end
 end
