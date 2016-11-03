@@ -3,7 +3,7 @@
 <article>
   <h3><%= @recipe.label %></h3>
   <p><%= "Yield: #{@recipe.yield} servings" %></p>
-  <p><%= link_to("See directions on on #{@recipe.source}", @recipe.url, target: 'blank') %></p>
+  <p><%= link_to("See directions on #{@recipe.source}", @recipe.url, target: 'blank') %></p>
 
   <h5><%= "Ingredients" %></h5>
   <ul>
