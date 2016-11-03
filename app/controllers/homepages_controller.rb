@@ -15,6 +15,7 @@ class HomepagesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.new(APIWrapper.find_single_recipe(params[:id]))
+    response = APIWrapper.find_single_recipe(params[:id])
+    @recipe = Recipe.new(response[0])
   end
 end

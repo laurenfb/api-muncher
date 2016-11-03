@@ -22,7 +22,7 @@ class APIWrapper
     recipe_list = []
     if response['count']
       response['hits'].each do |hash|
-        recipe = Recipe.new(hash)
+        recipe = Recipe.new(hash['recipe'])
         recipe_list << recipe
       end
     end

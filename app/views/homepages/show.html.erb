@@ -1,15 +1,26 @@
-<h1>Homepages#show</h1>
-<p>Find me in app/views/homepages/show.html.erb</p>
+<section><%= image_tag(@recipe.image, class: 'recipe-image single-image') %></section>
 
-<%= params %>
-<p>
-  <%= @recipe.id %>
-</p>
-<%= @recipe.label %>
-<p>
-  <%= image_tag(@recipe.image) %>
-</p>
-<%= @recipe.url %>
-<p>
-  <%= @recipe.yield %>
-</p>
+<article>
+  <h3><%= @recipe.label %></h3>
+  <p><%= "Yield: #{@recipe.yield} servings" %></p>
+  <p><%= link_to("See directions on #{@recipe.source}", @recipe.url, target: 'blank') %></p>
+
+  <h5><%= "Ingredients" %></h5>
+  <ul>
+    <% @recipe.ingredient_list.each do |ingredient| %>
+      <li><%= ingredient %></li>
+    <% end %>
+  </ul>
+
+  <h5><%= "Heath information" %></h5>
+  <ul>
+    <% @recipe.diet_labels.each do |diet_label| %>
+      <li><%= diet_label %></li>
+    <% end %>
+    <% @recipe.health_labels.each do |health_label| %>
+      <li><%= health_label %></li>
+    <% end %>
+  </ul>
+
+
+</article>
