@@ -18,6 +18,10 @@
 
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 
+.logo{
+  margin: 2% 0 5% 0;
+}
+
 .recipe-image{
   border-radius: 50%;
 }
@@ -33,8 +37,16 @@ footer{
   position: fixed;
 }
 
-ul{
+ul li{
   list-style-type: none;
+}
+
+li {
+  display: inline;
+}
+
+li.not-inline{
+  display: block; 
 }
 
 header{
@@ -52,6 +64,42 @@ header h1 a{
   padding-left: 2vw;
 }
 
+a:hover{
+  color: rgb(5, 145, 36);
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+.button{
+  background-color: rgb(5, 145, 36);
+  font-weight: bold;
+}
+
+.button:hover{
+  background-color: rgb(5, 145, 36);
+  text-decoration: underline;
+}
+
 header h1 a:hover{
   color: white;
+  text-decoration: none;
+}
+
+a{
+  color: rgb(5, 145, 36);
+  font-weight: bolder;
+}
+
+.recipe-fancy{
+  font-family: 'Lobster', helvetica;
+  font-size: 2.25rem;
+}
+
+.title-side{
+  margin-top: 10%;
+}
+
+.results-line{
+  margin-top: 3%;
+  margin-bottom: 3%;
 }

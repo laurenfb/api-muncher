@@ -1,6 +1,8 @@
 class HomepagesController < ApplicationController
 
   def search
+    @from = 0
+    @to = 10
   end
 
   def index
@@ -20,5 +22,13 @@ class HomepagesController < ApplicationController
   rescue JSON::ParserError
     flash[:notice] = ":("
     redirect_to root_path
+  end
+
+  def next
+    return @from += 10, @to += 10
+  end
+
+  def back
+    return @from -= 10, @to -= 10
   end
 end
