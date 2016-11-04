@@ -35,4 +35,49 @@ class HomepagesControllerTest < ActionController::TestCase
     end
   end
 
+  test 'controller should have from & to params if you\'re on the first page of results' do
+    VCR.use_cassette('index-with-params') do
+      get :index, {query: 'cat', next: 0}
+      assert_includes(@controller.params, 'from')
+      assert_includes(@controller.params, 'to')
+      assert_equal(@controller.params['from'], 10)
+      assert_equal(@controller.params['to'], 20)
+    end
+  end
+
+  test 'controller should have back param if you are not on the first page of results' do
+    VCR.use_cassette('index-with-params') do
+      get :index, {query: 'cat', back: 10}
+      assert_includes(@controller.params, 'from')
+      assert_includes(@controller.params, 'to')
+      assert_equal(@controller.params['from'], 0)
+      assert_equal(@controller.params['to'], 10)
+    end
+  end
+
+  test 'from and to params should increment when you go to the next page' do
+      VCR.use_cassette('index-with-params') do
+        get :index, {query: 'blue fish', next: 0}
+        assert_equal(@controller.params['from'], 10)
+        assert_equal(@controller.params['to'], 20)
+          VCR.use_cassette('now-go-to-next-page') do
+            get :index, {query: 'blue fish', next: 10}
+            assert_equal(@controller.params['from'], 20)
+            assert_equal(@controller.params['to'], 30)
+          end
+      end
+  end
+
+  test 'from and to params should decrement when you go back to the previous page' do
+      VCR.use_cassette('index-with-params') do
+        get :index, {query: 'blue fish', back: 40}
+        assert_equal(@controller.params['from'], 30)
+        assert_equal(@controller.params['to'], 40)
+          VCR.use_cassette('now-go-back') do
+            get :index, {query: 'blue fish', back: 30}
+            assert_equal(@controller.params['from'], 20)
+            assert_equal(@controller.params['to'], 30)
+          end
+      end
+  end
 end

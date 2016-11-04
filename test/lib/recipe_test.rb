@@ -82,7 +82,7 @@ class RecipeTest < ActionController::TestCase
     assert_equal(recipe.label, "new recipe")
     assert_nil(recipe.image)
     assert_nil(recipe.url)
-    assert_nil(recipe.yield)
+    assert_equal(recipe.yield, 0) # this is because i added .to_i
     assert_nil(recipe.diet_labels)
     assert_nil(recipe.health_labels)
     assert_nil(recipe.ingredient_list)
