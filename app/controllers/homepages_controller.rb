@@ -1,12 +1,21 @@
 class HomepagesController < ApplicationController
 
   def search
-    @from = 0
-    @to = 10
   end
 
   def index
-    response = APIWrapper.search(params[:query])
+    if params[:next]
+      params[:from] = params[:next].to_i + 10
+      params[:to] = params[:next].to_i + 20
+      response = APIWrapper.search(params[:query], params[:from], params[:to])
+    elsif params[:back]
+      params[:from] = params[:back].to_i - 10
+      params[:to] = params[:back].to_i
+      response = APIWrapper.search(params[:query], params[:from], params[:to])
+    else
+      response = APIWrapper.search(params[:query])
+    end
+
     if response['count'] > 0
       @recipes = APIWrapper.make_recipe_list(response)
       @message = "Here's your results for #{params[:query]}:"
@@ -22,13 +31,5 @@ class HomepagesController < ApplicationController
   rescue JSON::ParserError
     flash[:notice] = ":("
     redirect_to root_path
-  end
-
-  def next
-    return @from += 10, @to += 10
-  end
-
-  def back
-    return @from -= 10, @to -= 10
   end
 end

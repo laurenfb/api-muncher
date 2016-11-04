@@ -1,17 +1,20 @@
 <%= render partial: 'header' %>
 
 <div class="row">
-  <%= form_tag('back', method: :get) do %>
+
+  <%= form_tag(results_path, method: :get) do %>
+    <%= hidden_field_tag :back, params[:from] %>
     <%= hidden_field_tag :query, params[:query] %>
-    <!-- <%= hidden_field_tag :from, @from %>
-    <%= hidden_field_tag :from, @from %> -->
-    <%= submit_tag "back", class: "Button" %>
+    <%= submit_tag "back", class: "button", disabled: params[:from].nil? %>
   <% end %>
 
-  <%= form_tag('next', method: :get) do %>
+  <%= form_tag(results_path, method: :get) do %>
+    <%= hidden_field_tag :next, params[:from] %>
     <%= hidden_field_tag :query, params[:query] %>
-    <%= submit_tag "next", class: "Button" %>
+    <%= submit_tag "next", class: "button" %>
   <% end %>
+
+
 </div>
 
 <div class="row">
