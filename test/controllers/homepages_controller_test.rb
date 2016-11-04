@@ -6,7 +6,13 @@ class HomepagesControllerTest < ActionController::TestCase
        get :index
       assert_response :success
     end
+  end
 
+  test 'can search from index' do
+    VCR.use_cassette('search-index') do
+      get :index, params: {query: 'cat'}
+      assert_response :success
+    end
   end
 
   test "should get search" do
@@ -24,7 +30,7 @@ class HomepagesControllerTest < ActionController::TestCase
   test 'if show is passed a bad id, redirected  + flash notice' do
     VCR.use_cassette('get-show-bad-id') do
       get :show, {label: "dog", id: 'cat'}
-      assert_redirected_to(root_path) 
+      assert_redirected_to(root_path)
       assert_equal(flash[:notice], ":(")
     end
   end

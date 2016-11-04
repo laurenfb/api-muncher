@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.edamam.com/search?app_id=e9c170c7&app_key=edb9cb9c3fe8400bbaa929c0a81446ce&from=0&q=&to=10
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ngx_openresty
+      Date:
+      - Fri, 04 Nov 2016 03:00:04 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 UTC
+      X-Served-By:
+      - ip-10-150-1-224/10.150.1.224
+      Set-Cookie:
+      - JSESSIONID=FAC1D56957A79347F156C80E89C33DC2; Path=/
+      - JSESSIONID=FAC1D56957A79347F156C80E89C33DC2; Path=/; Secure; HttpOnly
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "q" : "",
+          "from" : 0,
+          "to" : 10,
+          "params" : {
+            "sane" : [ ],
+            "to" : [ "10" ],
+            "q" : [ "" ],
+            "app_id" : [ "e9c170c7" ],
+            "app_key" : [ "edb9cb9c3fe8400bbaa929c0a81446ce" ],
+            "from" : [ "0" ]
+          },
+          "more" : false,
+          "count" : 0,
+          "hits" : [ ]
+        }
+    http_version: 
+  recorded_at: Fri, 04 Nov 2016 03:00:06 GMT
+recorded_with: VCR 3.0.3
