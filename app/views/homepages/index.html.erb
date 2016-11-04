@@ -1,5 +1,17 @@
 <%= render partial: 'header' %>
 
+<%= form_tag('back', method: :get) do %>
+  <%= hidden_field_tag :query, params[:query] %>
+  <!-- <%= hidden_field_tag :from, @from %>
+  <%= hidden_field_tag :from, @from %> -->
+  <%= submit_tag "back", class: "Button" %>
+<% end %>
+
+<%= form_tag('next', method: :get) do %>
+  <%= hidden_field_tag :query, params[:query] %>
+  <%= submit_tag "next", class: "Button" %>
+<% end %>
+
 <h4><%= @message %></h4>
 
 <% @recipes.each do |recipe| %>
