@@ -12,7 +12,7 @@ class Recipe
       @image = params['image']
       @source = params['source']
       @url = params['url']
-      @yield = params['yield']
+      @yield = params['yield'].to_i
       @diet_labels = params['dietLabels']
       @health_labels = params['healthLabels']
       @ingredient_list = params['ingredientLines']
