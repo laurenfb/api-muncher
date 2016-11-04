@@ -5,12 +5,12 @@
     <%= hidden_field_tag :query, params[:query] %>
     <!-- <%= hidden_field_tag :from, @from %>
     <%= hidden_field_tag :from, @from %> -->
-    <%= submit_tag "back", class: "Button" %>
+    <%= submit_tag "back", class: "button" %>
   <% end %>
 
   <%= form_tag('next', method: :get) do %>
     <%= hidden_field_tag :query, params[:query] %>
-    <%= submit_tag "next", class: "Button" %>
+    <%= submit_tag "next", class: "button" %>
   <% end %>
 </div>
 

@@ -25,10 +25,22 @@ class HomepagesController < ApplicationController
   end
 
   def next
-    return @from += 10, @to += 10
+    @from += 10
+    @to += 10
+    raise
+    response = APIWrapper.search(params[:query], @from, @to)
+    if response['count'] > 0
+      @recipes = APIWrapper.make_recipe_list(response)
+      @message = "Here's your results for #{params[:query]}:"
+    else
+      @recipes = []
+      @message = "We weren't able to find any recipes for #{params[:query]}. Care to try again?"
+    end
+    redirect_to root_path
   end
 
   def back
-    return @from -= 10, @to -= 10
+    @from -= 10
+    @to -= 10
   end
 end

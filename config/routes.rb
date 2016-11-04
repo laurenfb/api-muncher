@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get '/show/:label' => 'homepages#show', as: 'show_recipe'
 
-  get 'back' => 'homepages#index', as: 'back'
+  get 'back' => 'homepages#back', as: 'back'
 
-  get 'next' => 'homepages#index', as: 'next'
+  get 'next' => 'homepages#next', as: 'next'
 end
