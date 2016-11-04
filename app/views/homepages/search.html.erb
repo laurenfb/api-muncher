@@ -1,13 +1,12 @@
-<!-- class='small-12 columns' -->
-<!-- <div class='row'> -->
-  <article id='logo-holder'>
-    <%= image_tag('what-the-heck-should-I-eat-logo.png', {alt: 'logo', title: 'logo', class: 'logo small-centered columns'}) %>
-  </article>
-<!-- </div> -->
 
-<div class='row'>
+<article id='logo-holder'>
+  <%= image_tag('what-the-heck-should-I-eat-logo.png', {alt: 'logo', title: 'logo', class: 'logo small-centered columns'}) %>
+</article>
+
+
+<div class='row search-holder'>
   <aside class='large-8 medium-centered columns'>
-    <%= form_tag('results', method: :get, class: 'small-12 medium-8 large-centered columns') do %>
+    <%= form_tag('results', method: :get, class: 'small-12 medium-8 small-centered columns') do %>
       <%= text_field_tag :query %><%= submit_tag "search", class: "button small-6 large-centered columns" %>
     <% end %>
   </aside>

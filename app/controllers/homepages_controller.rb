@@ -20,6 +20,9 @@ class HomepagesController < ApplicationController
     if response['count'] > 0
       @recipes = APIWrapper.make_recipe_list(response)
       @message = "Here's your results for #{params[:query]}:"
+    elsif params[:query] == ''
+      @recipes = []
+      @message = "Please enter a search term so we can find you some recipes. Care to try again?"
     else
       @recipes = []
       @message = "We weren't able to find any recipes for #{params[:query]}. Care to try again?"
