@@ -18,6 +18,14 @@
 
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 
+.logo{
+  margin: 2% 0 5% 0;
+}
+
+form input {
+  display: inline;
+}
+
 .recipe-image{
   border-radius: 50%;
 }
@@ -52,6 +60,28 @@ header h1 a{
   padding-left: 2vw;
 }
 
+a:hover{
+  color: rgb(5, 145, 36);
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+.button{
+  background-color: rgb(5, 145, 36);
+  font-weight: bold;
+}
+
+.button:hover{
+  background-color: rgb(5, 145, 36);
+  text-decoration: underline;
+}
+
 header h1 a:hover{
   color: white;
+  text-decoration: none;
+}
+
+a{
+  color: rgb(5, 145, 36);
+  font-weight: bolder;
 }
