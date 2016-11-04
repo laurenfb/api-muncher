@@ -5,7 +5,7 @@
   <%= form_tag(results_path, method: :get) do %>
     <%= hidden_field_tag :back, params[:from] %>
     <%= hidden_field_tag :query, params[:query] %>
-    <%= submit_tag "back", class: "button", disabled: params[:from].nil? %>
+    <%= submit_tag "back", class: "button", :disabled => params[:from] == 0 %>
   <% end %>
 
   <%= form_tag(results_path, method: :get) do %>
