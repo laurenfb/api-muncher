@@ -22,10 +22,6 @@
   margin: 2% 0 5% 0;
 }
 
-form input {
-  display: inline;
-}
-
 .recipe-image{
   border-radius: 50%;
 }
@@ -41,8 +37,16 @@ footer{
   position: fixed;
 }
 
-ul{
+ul li{
   list-style-type: none;
+}
+
+li {
+  display: inline;
+}
+
+li.not-inline{
+  display: block; 
 }
 
 header{
@@ -89,4 +93,13 @@ a{
 .recipe-fancy{
   font-family: 'Lobster', helvetica;
   font-size: 2.25rem;
+}
+
+.title-side{
+  margin-top: 10%;
+}
+
+.results-line{
+  margin-top: 3%;
+  margin-bottom: 3%;
 }

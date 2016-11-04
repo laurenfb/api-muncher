@@ -23,7 +23,7 @@
         <h5 class='recipe-fancy'><%= "Ingredients" %></h5>
         <ul>
           <% @recipe.ingredient_list.each do |ingredient| %>
-            <li><%= ingredient %></li>
+            <li class='not-inline'><%= ingredient %></li>
           <% end %>
         </ul>
       </section>
@@ -32,10 +32,10 @@
         <h5 class='recipe-fancy'><%= "Heath information" %></h5>
         <ul>
           <% @recipe.diet_labels.each do |diet_label| %>
-            <li><%= diet_label %></li>
+            <li class='not-inline'><%= diet_label %></li>
           <% end %>
           <% @recipe.health_labels.each do |health_label| %>
-            <li><%= health_label %></li>
+            <li class='not-inline'><%= health_label %></li>
           <% end %>
         </ul>
       </section>

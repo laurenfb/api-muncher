@@ -1,24 +1,32 @@
 <%= render partial: 'header' %>
 
-<%= form_tag('back', method: :get) do %>
-  <%= hidden_field_tag :query, params[:query] %>
-  <!-- <%= hidden_field_tag :from, @from %>
-  <%= hidden_field_tag :from, @from %> -->
-  <%= submit_tag "back", class: "Button" %>
-<% end %>
+<div class="row">
+  <%= form_tag('back', method: :get) do %>
+    <%= hidden_field_tag :query, params[:query] %>
+    <!-- <%= hidden_field_tag :from, @from %>
+    <%= hidden_field_tag :from, @from %> -->
+    <%= submit_tag "back", class: "Button" %>
+  <% end %>
 
-<%= form_tag('next', method: :get) do %>
-  <%= hidden_field_tag :query, params[:query] %>
-  <%= submit_tag "next", class: "Button" %>
-<% end %>
+  <%= form_tag('next', method: :get) do %>
+    <%= hidden_field_tag :query, params[:query] %>
+    <%= submit_tag "next", class: "Button" %>
+  <% end %>
+</div>
 
-<h4><%= @message %></h4>
+<div class="row">
+  <h4 class='recipe-fancy'><%= @message %></h4>
+</div>
 
-<% @recipes.each do |recipe| %>
-  <ul>
-    <%= link_to(show_recipe_path(recipe.label, params: {id: recipe.id})) do %>
-      <li><%=  image_tag(recipe.image, {class: 'recipe-image', title: recipe.label}) %></li>
-      <li> <%= recipe.label %></li>
-    <% end %>
-  </ul>
-<% end %>
+<div class="row">
+  <% @recipes.each do |recipe| %>
+    <div class='medium-6 columns'>
+      <div class="row results-line">
+      <%= link_to(show_recipe_path(recipe.label, params: {id: recipe.id})) do %>
+        <li class='medium-6 columns'><%=  image_tag(recipe.image, {class: 'recipe-image', title: recipe.label}) %></li>
+        <li class='medium-6 columns title-side'> <%= recipe.label %></li>
+      <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
