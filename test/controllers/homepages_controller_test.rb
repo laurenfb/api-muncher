@@ -15,8 +15,18 @@ class HomepagesControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show, {name: 'recipe_name'}
-    assert_response :success
+    VCR.use_cassette('get-show') do
+      get :show, {label: "cat", id: 'http://www.edamam.com/ontologies/edamam.owl%23recipe_6ae9c0dbe45417f7983e2b93493f1172'}
+      assert_response :success
+    end
+  end
+
+  test 'if show is passed a bad id, redirected  + flash notice' do
+    VCR.use_cassette('get-show-bad-id') do
+      get :show, {label: "dog", id: 'cat'}
+      assert_redirected_to(root_path) 
+      assert_equal(flash[:notice], ":(")
+    end
   end
 
 end
