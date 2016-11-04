@@ -1,7 +1,6 @@
 class HomepagesController < ApplicationController
 
-  def search
-  end
+  def search;  end
 
   def index
     if params[:next]
@@ -13,6 +12,8 @@ class HomepagesController < ApplicationController
       params[:to] = params[:back].to_i
       response = APIWrapper.search(params[:query], params[:from], params[:to])
     else
+      params[:from] = 0
+      params[:to] = 10
       response = APIWrapper.search(params[:query])
     end
 
