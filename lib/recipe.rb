@@ -5,18 +5,18 @@ class Recipe
 
   def initialize(params)
     if params.empty? || params['label'] == nil || params['label'] == ""
-      ArgumentError.new("Recipe must have a name")
+      raise ArgumentError.new("Recipe must have a name")
     else
       @id = URI.encode(params['uri'].to_s)
       @label = params['label'].to_s
       @image = params['image']
       @source = params['source']
       @url = params['url']
-      @yield = params['yield']
+      @yield = params['yield'].to_i
       @diet_labels = params['dietLabels']
       @health_labels = params['healthLabels']
       @ingredient_list = params['ingredientLines']
-    end 
+    end
   end
 
 end
