@@ -1,3 +1,18 @@
+Reflection
+==========
+
+[on heroku](https://whattheheckshouldieat.herokuapp.com)
+
+1. This project I wrote tests before I wrote any code, which was difficult but interesting. Almost none of my tests ended up being the same -- once I wrote the actual program, I found that there were places I needed to tweak. But I enjoyed trying to actually do TDD for the first time on a large project. I don't know that my tests are necessarily the best tests in the world but I'm happy that they are there & 100% covered.     
+2. I wouldn't say I have a great grasp of foundation, even though I focused on it in this project (I didn't want to but I forced myself to do it...). Still feels like stumbling around in the dark with arms extended, hoping I find a light switch.     
+3. There were a variety of different ways to paginate. It was interesting to see some folks use a gem. I thought that it looked more professional than my custom method with buttons. It was gratifying to try it on my own, but I think more realistic for future projects to use a gem. Some folks also chose to make the search bar available on every page, which is really cool to me (I didn't even think of that!). Finally, I also enjoyed seeing the many ways people styled their projects. Everyone that I saw had a very unique look and they were all quite different.
+
+
+
+
+
+
+
 # Recipe API Consumer
 
 ## Learning Goals:
