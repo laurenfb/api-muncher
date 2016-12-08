@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # use postgres on production
 gem 'pg', group: :production
 
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -53,6 +54,7 @@ group :development, :test do
   gem 'minitest-vcr'
   gem 'webmock'
   gem 'minitest-reporters'
+  gem 'sqlite3'
 end
 
 group :development do
